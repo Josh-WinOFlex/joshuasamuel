@@ -753,7 +753,7 @@
 		.resume-frame {
 			position: relative;
 			width: 100%;
-			aspect-ratio: 8.5 / 11;
+			height: clamp(520px, 70vw, 820px);
 			overflow: hidden;
 			border-radius: 1.5rem;
 			border: 1px solid rgba(79, 209, 255, 0.28);
@@ -769,6 +769,12 @@
 			border: none;
 			background: transparent;
 			filter: saturate(1.05);
+		}
+
+		@media (min-width: 1024px) {
+			.resume-frame {
+				height: clamp(480px, 62vh, 720px);
+			}
 		}
 
 		.resume-fallback {
@@ -1137,21 +1143,13 @@
 					<div class="space-y-3">
 						<p class="text-sm uppercase tracking-[0.36em] text-cyan-200/70">Resume</p>
 						<h2 class="font-header text-3xl text-cyan-100 heading-glow">Resume & Credentials</h2>
-						<p class="text-slate-300 max-w-2xl">View the latest WinOFlex resume inline from OneDrive. Use the buttons to open or download if your browser blocks embeds.</p>
-					</div>
-					<div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-						<a href="https://onedrive.live.com/?cid=YOUR_ONEDRIVE_CID&resid=YOUR_ONEDRIVE_RES_ID&authkey=YOUR_ONEDRIVE_AUTH" target="_blank" rel="noopener" class="cta-primary inline-flex items-center justify-center rounded-full bg-cyan-400/30 border border-cyan-400/80 px-5 py-3 text-sm font-semibold text-cyan-50 shadow-glow backdrop-blur-sm hover:bg-cyan-400/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-cyan-200">
-							Open in OneDrive
-						</a>
-						<a href="https://onedrive.live.com/download?resid=YOUR_ONEDRIVE_RES_ID&authkey=YOUR_ONEDRIVE_AUTH" target="_blank" rel="noopener" class="cta-secondary inline-flex items-center justify-center rounded-full bg-slate-900/60 border border-cyan-300/30 px-5 py-3 text-sm font-semibold text-slate-200">
-							Download PDF
-						</a>
+						<p class="text-slate-300 max-w-2xl">View the latest WinOFlex resume inline from OneDrive. If your browser blocks embeds, tap or long-press the frame to open it directly.</p>
 					</div>
 				</div>
 				<div class="resume-frame card-transition">
-					<iframe src="https://onedrive.live.com/embed?resid=YOUR_ONEDRIVE_RES_ID&authkey=YOUR_ONEDRIVE_AUTH&em=2" title="Joshua Samuel Resume" loading="lazy" allowfullscreen></iframe>
+					<iframe src="https://1drv.ms/b/c/4d892614ad7aa1cb/IQSNMZ-hdwGnQ4rUelxudYOGAaYBE3xyEbv99nMGm1-Jvas?embed=1" title="Joshua Samuel Resume" loading="lazy" allowfullscreen oncontextmenu="return false;"></iframe>
 				</div>
-				<p class="resume-fallback">If the embed does not load, use the Open in OneDrive or Download buttons above.</p>
+				<p class="resume-fallback">If the embed does not load, open the frame in a new tab via tap or long-press.</p>
 			</div>
 		</section>
 
